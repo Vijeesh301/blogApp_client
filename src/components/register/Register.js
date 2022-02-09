@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./register.css";
 import Validation from "./Validation";
+import axios from "axios";
 
 const Register = () => {
 	// Storing Form Field Values
@@ -31,11 +32,29 @@ const Register = () => {
 		setIsSubmit(true);
 	};
 
+	//form submission
+	const submitValues = () => {
+		axios
+			.post("http://localhost:5000/api/auth/register", formValues)
+			.then((response) => {
+				console.log(response);
+			});
+	};
+
 	useEffect(() => {
 		if (Object.keys(formErrorValues).length === 0 && isSubmit) {
-			alert("Registration successful...");
+			register();
 		}
 	}, [formErrorValues]);
+
+	function register() {
+		axios
+			.post("https://localhost:5000/api/register", formValues)
+			.then((response) => {
+				alert("nnn");
+				setFormValues(response.data);
+			});
+	}
 
 	return (
 		<>
@@ -75,7 +94,9 @@ const Register = () => {
 						onChange={handleChange}
 					/>
 					<p className='error'>{formErrorValues.password}</p>
-					<button className='registerButton'>SUBMIT</button>
+					<button onClick={submitValues} className='registerButton'>
+						SUBMIT
+					</button>
 				</form>
 			</div>
 		</>
