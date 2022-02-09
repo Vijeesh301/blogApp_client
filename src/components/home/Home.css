@@ -1,0 +1,14 @@
+#head{
+    color: rgb(245, 205, 205);
+    text-align: center;
+    margin-top: 10%;
+    font-family: supermercado one;
+    font-size: 45px;
+}
+
+.home p{
+    margin: 70px 100px 75px 100px;
+    text-align: justify;
+    margin-top: 3%;
+    font-family: roboto mono;
+}

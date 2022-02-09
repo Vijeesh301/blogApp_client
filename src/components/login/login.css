@@ -1,0 +1,37 @@
+.login {
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginTitle {
+    font-size: 40px;
+}
+
+.loginForm {
+   margin-top: 20px;
+   display: flex; 
+   flex-direction: column;
+}
+
+.loginForm>label {
+    margin: 10px 0;
+}
+
+.loginInput {
+    padding: 10px;
+    background-color: white;
+    border: none;
+}
+
+.loginButton {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: turquoise;
+    border: none;
+    color: rgb(78, 11, 11);
+    border-radius: 15px;
+    padding: 10px;
+}
