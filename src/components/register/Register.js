@@ -43,18 +43,8 @@ const Register = () => {
 
 	useEffect(() => {
 		if (Object.keys(formErrorValues).length === 0 && isSubmit) {
-			register();
 		}
 	}, [formErrorValues]);
-
-	function register() {
-		axios
-			.post("https://localhost:5000/api/register", formValues)
-			.then((response) => {
-				alert("nnn");
-				setFormValues(response.data);
-			});
-	}
 
 	return (
 		<>
